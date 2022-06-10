@@ -1,5 +1,8 @@
 function SolArka (hiz: number) {
-    if (hiz > 0) {
+    if (hiz == 0) {
+        pins.digitalWritePin(DigitalPin.P12, 0)
+        pins.digitalWritePin(DigitalPin.P2, 0)
+    } else if (hiz > 0) {
         pins.digitalWritePin(DigitalPin.P12, 0)
         pins.digitalWritePin(DigitalPin.P2, 1)
     } else {
@@ -8,7 +11,10 @@ function SolArka (hiz: number) {
     }
 }
 function sagÖn (hiz: number) {
-    if (hiz > 0) {
+    if (hiz == 0) {
+        pins.digitalWritePin(DigitalPin.P9, 0)
+        pins.digitalWritePin(DigitalPin.P10, 0)
+    } else if (hiz > 0) {
         pins.digitalWritePin(DigitalPin.P9, 0)
         pins.digitalWritePin(DigitalPin.P10, 1)
     } else {
@@ -17,7 +23,10 @@ function sagÖn (hiz: number) {
     }
 }
 function solÖn (hiz: number) {
-    if (hiz > 0) {
+    if (hiz == 0) {
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
+    } else if (hiz > 0) {
         pins.digitalWritePin(DigitalPin.P13, 0)
         pins.digitalWritePin(DigitalPin.P14, 1)
     } else {
@@ -25,10 +34,6 @@ function solÖn (hiz: number) {
         pins.digitalWritePin(DigitalPin.P14, 0)
     }
 }
-input.onButtonPressed(Button.A, function () {
-    sagÖn(1)
-    SolArka(-1)
-})
 radio.onReceivedValue(function (name, value) {
     if (name == "SagOn") {
         sagÖn(value)
@@ -55,7 +60,10 @@ function dur (hiz: number) {
     pins.digitalWritePin(DigitalPin.P10, 0)
 }
 function sagArka (hiz: number) {
-    if (hiz > 0) {
+    if (hiz == 0) {
+        pins.digitalWritePin(DigitalPin.P6, 0)
+        pins.digitalWritePin(DigitalPin.P7, 0)
+    } else if (hiz > 0) {
         pins.digitalWritePin(DigitalPin.P6, 0)
         pins.digitalWritePin(DigitalPin.P7, 1)
     } else {
